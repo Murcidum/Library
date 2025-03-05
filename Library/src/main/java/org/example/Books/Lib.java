@@ -1,7 +1,9 @@
 package org.example.Books;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Lib {
 
@@ -17,8 +19,8 @@ public class Lib {
     }
 
     //TODO: Редактирование книги из списка
-    void updateBook() {
-
+    public void updateBook(int id, Book newBook) {
+        booksMap.replace(id, newBook);
     }
 
     //TODO: вывод всего списка книг
@@ -28,6 +30,11 @@ public class Lib {
         }
     }
 
+    //TODO: Вывод конкретной книги
+    public void showBook(int id) {
+        System.out.println(booksMap.get(id).getName());
+    }
+
     //TODO: Удаление книги или списка книг
     public void deleteBook (int id) {
         booksMap.remove(id);
@@ -35,24 +42,24 @@ public class Lib {
 
     //TODO: Удаление всех книг
     void deleteAllBooks() {
+        booksMap.clear();
+    }
+    //TODO: Сохранить весь перечень книг в JSON Serialization
+    void saveAllBookToJsonFile() {
+
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        //Serialization to Json file
+//        //String to Json
+//        String json = new ObjectMapper().writeValueAsString(myItem);
+//        //Create file
+//        objectMapper.writeValue(new File("item.json"), myItem);
+//        System.out.println(json);
 
     }
-    //TODO: Сохранить весь перечень книг
-    void saveAllBookToJsonObj() {
+
+    //TODO: Загрузить список из JSON
+    void getBooksListFromJson() {
 
     }
 
-    //TODO: Ниже фильтры по разным категориям
-    void filterBooksByAuthor() {
-
-    }
-
-    void filterBooksByYear() {
-
-    }
-
-
-    void filterBooksByName() {
-
-    }
 }

@@ -4,7 +4,7 @@ package org.example.Books;
 public class Book {
     String name;
     Author author;
-    int publicationYear;
+    int publicationYear = 0;
 
     public String getName() {
         return name;
